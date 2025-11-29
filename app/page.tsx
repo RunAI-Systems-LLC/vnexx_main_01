@@ -1,429 +1,306 @@
-// app/page.tsx
+/* app/page.tsx */
 
-import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Glow de fundo */}
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 h-80 w-[38rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,_#38bdf8_0,_rgba(0,0,0,0)_70%)] opacity-40 blur-3xl" />
-        <div className="absolute bottom-[-10rem] right-[-6rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,_#22c55e_0,_rgba(0,0,0,0)_70%)] opacity-30 blur-3xl" />
+    <main className="min-h-screen bg-black text-slate-50">
+      {/* BACKGROUND RADIANCE – estilo Framer */}
+      <div className="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+        <div className="absolute -top-64 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full opacity-70 blur-3xl"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 10% 0%, #4f46e5 0, transparent 55%), radial-gradient(circle at 90% 10%, #22d3ee 0, transparent 55%), radial-gradient(circle at 50% 100%, #f97316 0, transparent 55%)",
+          }}
+        />
+        <div className="absolute bottom-[-280px] left-[-120px] h-[420px] w-[420px] rounded-full opacity-60 blur-3xl"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 0% 100%, #22c55e 0, transparent 55%), radial-gradient(circle at 80% 40%, #6366f1 0, transparent 55%)",
+          }}
+        />
+        <div className="absolute bottom-[-260px] right-[-140px] h-[420px] w-[420px] rounded-full opacity-70 blur-3xl"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 100% 100%, #ec4899 0, transparent 55%), radial-gradient(circle at 20% 0%, #0ea5e9 0, transparent 55%)",
+          }}
+        />
       </div>
 
-      {/* Conteúdo */}
-      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-16 pt-6 sm:px-6 lg:px-8">
-        {/* NAVBAR */}
-        <header className="flex items-center justify-between gap-6 py-4">
+      {/* NAVBAR SIMPLES */}
+      <header className="relative z-10 border-b border-white/5 bg-black/30 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 via-cyan-400 to-blue-500 shadow-[0_0_25px_rgba(56,189,248,0.7)]">
-              <span className="text-xs font-semibold tracking-[0.2em]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-blue-500 to-emerald-400 shadow-[0_0_30px_rgba(56,189,248,0.7)]">
+              <span className="text-xs font-semibold tracking-[0.25em] text-white">
                 VN
               </span>
             </div>
             <div className="leading-tight">
-              <p className="text-[0.72rem] uppercase tracking-[0.2em] text-sky-300/80">
+              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
                 VENNON DISRUPT
               </p>
-              <p className="text-base font-semibold tracking-wide">
-                vNEXX - VENNON DISRUPT™
+              <p className="text-sm font-semibold tracking-[0.20em] text-slate-50">
+                vNEXX – VENNON DISRUPT™
               </p>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-6 text-sm text-white/70 md:flex">
-            <Link href="#platform" className="hover:text-sky-300">
-              Plataforma
-            </Link>
-            <Link href="#runsbi" className="hover:text-sky-300">
-              RunsBI
-            </Link>
-            <Link href="#tghost" className="hover:text-sky-300">
-              TGhosT™
-            </Link>
-            <Link href="#dsocialbeast" className="hover:text-sky-300">
-              dSOCIALBEAST
-            </Link>
-            <Link href="#security" className="hover:text-sky-300">
-              RunIDZeroTrusT
-            </Link>
-          </nav>
+          <button className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.45)] transition hover:border-cyan-300/80 hover:bg-cyan-500/20 hover:text-cyan-50">
+            LAUNCH VNE XX
+          </button>
+        </div>
+      </header>
 
-          <div className="flex items-center gap-3">
-            <button className="hidden rounded-full border border-white/10 px-4 py-2 text-xs font-medium tracking-wide text-white/75 backdrop-blur-sm hover:border-sky-400 hover:text-sky-300 md:inline-flex">
-              vNEXX • RunAI Systems LLC
-            </button>
-            <button className="rounded-full bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-black shadow-[0_0_18px_rgba(56,189,248,0.7)]">
-              Launch vNEXX
-            </button>
-          </div>
-        </header>
-
-        {/* HERO */}
-        <section className="mt-4 grid flex-1 gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:items-center">
-          {/* Texto */}
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-sky-500/10 px-3 py-1 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-sky-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
-              Multimodal Corporate Automation
+      {/* HERO SECTION */}
+      <section className="relative z-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-20 pt-12 md:flex-row md:items-center md:pb-28 md:pt-16">
+          {/* TEXTO PRINCIPAL */}
+          <div className="flex-1 space-y-6 md:space-y-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-black/50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.5)]">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+              MULTIMODAL CORPORATE AUTOMATION
             </div>
 
-            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-[2.8rem]">
+            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
               Seu cockpit de{" "}
-              <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                voz, dados e IA
+              <span className="text-sky-400">voz</span>,{" "}
+              <span className="text-cyan-300">dados</span> e{" "}
+              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                IA
               </span>{" "}
               em um único painel.
             </h1>
 
-            <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-[0.95rem]">
-              vNEXX - VENNON DISRUPT™ é o{" "}
-              <strong className="font-semibold text-white">
+            <p className="max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
+              vNEXX – VENNON DISRUPT™ é o{" "}
+              <span className="font-semibold">
                 primeiro ecossistema multimodal
-              </strong>{" "}
+              </span>{" "}
               que conecta ERP, bancos, RunsBI (RANS BI), IA generativa e
               chef-bots como o TGhosT™ em uma só camada. Tudo é comandado por
               voz — do mobile ao headset — seguindo o padrão{" "}
-              <span className="font-semibold">RunIDZeroTrusT</span> de
+              <span className="font-semibold">RunIDZeroTrusT™</span> de
               segurança.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <button className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 px-6 py-2.5 text-sm font-semibold text-black shadow-[0_0_22px_rgba(56,189,248,0.8)]">
-                Ver demo do painel
-                <span className="ml-2 inline-block transition-transform group-hover:translate-x-0.5">
-                  →
-                </span>
+            {/* CTAS */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_0_40px_rgba(56,189,248,0.9)] transition hover:from-sky-400 hover:via-blue-400 hover:to-cyan-300">
+                <span className="relative z-10">Ver demo do painel</span>
+                <span className="relative z-10 text-lg leading-none">↗</span>
+                <span className="absolute inset-0 translate-x-[-120%] bg-white/25 opacity-0 transition group-hover:translate-x-[120%] group-hover:opacity-100" />
               </button>
-              <button className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-medium text-white/80 backdrop-blur-sm hover:border-sky-400 hover:text-sky-300">
+
+              <button className="inline-flex items-center gap-2 rounded-full border border-slate-600/80 bg-black/60 px-5 py-2 text-xs font-medium uppercase tracking-[0.20em] text-slate-200 transition hover:border-slate-300 hover:bg-slate-900/70">
                 Falar com a RunAI
               </button>
             </div>
 
-            <div className="mt-5 flex flex-wrap items-center gap-3 text-[0.7rem] uppercase tracking-[0.24em] text-white/40">
-              <span className="rounded-full border border-white/10 px-3 py-1">
-                Powered by OpenAI
-              </span>
-              <span className="rounded-full border border-white/10 px-3 py-1">
-                Azure + Power BI Embedded
-              </span>
-              <span className="rounded-full border border-white/10 px-3 py-1">
-                Multi-país • Multi-moeda
-              </span>
-            </div>
-          </div>
-
-          {/* Painel fake / BI */}
-          <div
-            id="platform"
-            className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.02] to-black/80 p-4 shadow-[0_0_40px_rgba(15,23,42,0.9)]"
-          >
-            {/* Header do painel */}
-            <div className="flex items-center justify-between border-b border-white/5 pb-3">
-              <div>
-                <p className="text-[0.7rem] uppercase tracking-[0.24em] text-white/40">
-                  vNEXX Command Center
-                </p>
-                <p className="text-xs text-white/60">
-                  32 empresas • 118 contas bancárias • Atualização em tempo real
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-[0.7rem] text-white/60">
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-1 text-emerald-300">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
-                  LIVE
+            {/* ECO-SYSTEM CHIPS */}
+            <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-slate-300">
+              {[
+                "dSOCIALBEAST™",
+                "TGhosT™",
+                "RunIDZeroTrusT™",
+                "RunsBI™ (RANS BI)",
+                "D-SaaS™",
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 tracking-[0.12em]"
+                >
+                  {label}
                 </span>
-                <span className="rounded-full border border-white/10 px-2 py-1">
-                  TGhosT™ Listening
-                </span>
-              </div>
+              ))}
             </div>
 
-            {/* Grid de cards */}
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {/* Card 1 */}
-              <div className="rounded-2xl bg-black/60 p-3 ring-1 ring-white/5">
-                <p className="text-[0.7rem] text-white/50">
-                  Saldo consolidado (hoje)
-                </p>
-                <p className="mt-1 text-xl font-semibold text-sky-300">
-                  R$ 18.427.392
-                </p>
-                <p className="text-[0.7rem] text-emerald-400">
-                  + R$ 742.900 vs. ontem
-                </p>
+            {/* POWERED BY */}
+            <div className="pt-4 text-[11px] uppercase tracking-[0.22em] text-slate-400">
+              Powered by{" "}
+              <span className="text-sky-300">OpenAI</span> •{" "}
+              <span className="text-slate-200">RunAI Systems LLC</span> • Azure
+              + Power BI Embedded
+            </div>
+          </div>
 
-                <div className="mt-3 flex h-16 items-end justify-between gap-1">
-                  {[
-                    "h-4",
-                    "h-10",
-                    "h-7",
-                    "h-14",
-                    "h-9",
-                    "h-16",
-                    "h-11",
-                    "h-6",
-                  ].map((h, i) => (
-                    <div
-                      key={i}
-                      className={`w-2 rounded-t-full bg-gradient-to-t from-sky-500 via-cyan-400 to-emerald-400 ${h}`}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="rounded-2xl bg-black/60 p-3 ring-1 ring-white/5">
-                <p className="text-[0.7rem] text-white/50">Empresas ativas</p>
-                <div className="mt-1 flex items-baseline gap-2">
-                  <p className="text-xl font-semibold text-white">
-                    27
-                  </p>
-                  <p className="text-[0.7rem] text-emerald-400">
-                    +3 novas esta semana
-                  </p>
-                </div>
-                <div className="mt-3 grid grid-cols-4 gap-2 text-[0.65rem] text-white/60">
-                  <div className="rounded-xl bg-sky-500/15 px-2 py-1">
-                    🇧🇷 Brasil
-                    <p className="text-[0.6rem] text-sky-300">11 empresas</p>
-                  </div>
-                  <div className="rounded-xl bg-emerald-500/15 px-2 py-1">
-                    🇺🇸 EUA
-                    <p className="text-[0.6rem] text-emerald-300">8 empresas</p>
-                  </div>
-                  <div className="rounded-xl bg-violet-500/15 px-2 py-1">
-                    🇪🇺 Europa
-                    <p className="text-[0.6rem] text-violet-300">5 empresas</p>
-                  </div>
-                  <div className="rounded-xl bg-amber-500/15 px-2 py-1">
-                    🌎 Outros
-                    <p className="text-[0.6rem] text-amber-300">3 empresas</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Card 3 - RunsBI */}
-              <div
-                id="runsbi"
-                className="rounded-2xl bg-gradient-to-br from-sky-500/20 via-cyan-400/5 to-emerald-400/10 p-3 ring-1 ring-sky-400/40"
-              >
+          {/* CARD DO PAINEL / MOTION VISUAL */}
+          <div className="flex-1">
+            <div className="relative mx-auto max-w-md rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-black/90 p-5 shadow-[0_0_60px_rgba(15,118,236,0.55)] backdrop-blur">
+              <div className="absolute -top-10 left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_30%_0%,#38bdf8,transparent_55%),radial-gradient(circle_at_80%_80%,#22c55e,transparent_55%)] opacity-60 blur-2xl" />
+              <div className="relative space-y-4">
                 <div className="flex items-center justify-between">
-                  <p className="text-[0.7rem] font-semibold text-sky-200">
-                    RunsBI™ • RANS BI
+                  <p className="text-xs font-medium uppercase tracking-[0.20em] text-slate-400">
+                    VNE XX • Realtime Ops
                   </p>
-                  <span className="rounded-full bg-black/60 px-2 py-1 text-[0.65rem] text-white/70">
-                    Multi-empresa • Multi-banco
+                  <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                    LIVE
                   </span>
                 </div>
 
-                <p className="mt-1 text-[0.8rem] text-white/75">
-                  Até{" "}
-                  <span className="font-semibold text-sky-300">
-                    100 empresas
-                  </span>{" "}
-                  e{" "}
-                  <span className="font-semibold text-sky-300">
-                    200+ contas bancárias
-                  </span>{" "}
-                  no mesmo cockpit, com dashboards coloridos por área (vendas,
-                  caixa, tributos, operações) – tudo atualizado em tempo real.
-                </p>
+                {/* MINI DASHBOARD */}
+                <div className="space-y-4 rounded-2xl border border-slate-700/70 bg-slate-900/70 p-4">
+                  <div className="flex items-center justify-between text-xs text-slate-300">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.20em] text-slate-500">
+                        Cash & Banks
+                      </p>
+                      <p className="mt-1 text-lg font-semibold text-sky-300">
+                        R$ 82.430
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[10px] uppercase tracking-[0.20em] text-slate-500">
+                        comandos de voz (24h)
+                      </p>
+                      <p className="mt-1 text-lg font-semibold text-emerald-300">
+                        327
+                      </p>
+                    </div>
+                  </div>
 
-                <div className="mt-3 flex flex-wrap gap-2 text-[0.65rem]">
-                  <span className="rounded-full bg-black/70 px-2 py-1 text-emerald-300">
-                    Voz: “mostrar fluxo de caixa da holding”
-                  </span>
-                  <span className="rounded-full bg-black/70 px-2 py-1 text-sky-300">
-                    Voz: “comparar bancos Brasil x EUA”
-                  </span>
-                  <span className="rounded-full bg-black/70 px-2 py-1 text-violet-300">
-                    Voz: “abrir visão de impostos do mês”
-                  </span>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                      <span>Fluxo de caixa • 7 dias</span>
+                      <span>RunsBI™</span>
+                    </div>
+                    <div className="flex h-16 items-end gap-1 rounded-xl bg-gradient-to-t from-slate-900 to-slate-800/70 p-2">
+                      {[
+                        16, 32, 24, 40, 28, 52, 38, 60, 44, 72, 56, 64,
+                      ].map((h, i) => (
+                        <div
+                          key={i}
+                          className="flex-1 rounded-full bg-gradient-to-t from-sky-500 via-blue-500 to-cyan-300 transition-transform duration-500 hover:-translate-y-1"
+                          style={{ height: `${h}%` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* COMANDO POR VOZ */}
+                  <div className="flex items-center gap-3 rounded-full border border-slate-700/80 bg-black/70 px-3 py-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-400 text-[10px] font-semibold text-white shadow-[0_0_24px_rgba(56,189,248,0.8)]">
+                      🎙
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">
+                        comando por voz
+                      </p>
+                      <p className="text-xs text-slate-100">
+                        “TGhosT, consolida bancos da América Latina e projeta o
+                        caixa de 90 dias.”
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Card 4 - TGhosT */}
-              <div
-                id="tghost"
-                className="rounded-2xl bg-black/70 p-3 ring-1 ring-white/8"
-              >
-                <div className="flex items-center justify-between">
-                  <p className="text-[0.7rem] font-semibold text-white/80">
-                    TGhosT™ • Chief-bot da operação
-                  </p>
-                  <span className="rounded-full bg-violet-500/20 px-2 py-1 text-[0.65rem] text-violet-200">
-                    NO FEAR | BUILT FOR DISRUPTERS
-                  </span>
+                <p className="text-[10px] text-slate-500">
+                  *Dashboard ilustrativo gerado pela camada RunsBI™. Até 100
+                  empresas e múltiplos bancos no mesmo painel.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER – ESTILO SPACEX COM FAIXA DE PARCEIROS */}
+      <footer className="relative z-10 border-t border-white/10 bg-black/80 pb-6 pt-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-1 text-xs text-slate-400">
+            <p className="text-[11px] uppercase tracking-[0.20em] text-slate-500">
+              Inspired by Kauai
+            </p>
+            <p className="text-[11px] text-slate-300">
+              Founder &amp; Inventor —{" "}
+              <span className="font-semibold text-slate-100">
+                Wesley S. Macedo
+              </span>
+            </p>
+            <p className="text-[11px] text-slate-400">
+              RunAI Systems LLC • vNEXX – VENNON DISRUPT™ • TGhosT™ •
+              RunIDZeroTrusT™ • RunsBI™ • D-SaaS™
+            </p>
+            <p className="text-[10px] text-slate-500">
+              © {new Date().getFullYear()} RunAI Systems LLC. All rights
+              reserved.
+            </p>
+          </div>
+
+          {/* MARQUEE DE PARCEIROS */}
+          <div className="relative w-full overflow-hidden md:w-[320px]">
+            <div className="partners-track">
+              {[
+                "OpenAI",
+                "Vercel",
+                "GitHub",
+                "Microsoft Azure",
+                "Power BI Embedded",
+              ].map((name) => (
+                <div key={name} className="partner-pill">
+                  {name}
                 </div>
-
-                <p className="mt-2 text-[0.8rem] text-white/70">
-                  O TGhosT™ é o chef-bot que entende cultura, sotaque e contexto
-                  de cada país. Ele recebe o comando de voz, fala com o vNEXX,
-                  orquestra RunsBI™ e devolve ações: dashboards, alertas e
-                  automações executadas.
-                </p>
-
-                <ul className="mt-2 space-y-1 text-[0.75rem] text-white/65">
-                  <li>• Gatilhos por voz em PT-BR, EN, ES e mais.</li>
-                  <li>
-                    • Respeita as políticas da OpenAI e da RunAI Systems LLC.
-                  </li>
-                  <li>• Pronto para ser espelhado em mobile, web e hardware.</li>
-                </ul>
-              </div>
+              ))}
+              {/* duplica para efeito contínuo */}
+              {[
+                "OpenAI",
+                "Vercel",
+                "GitHub",
+                "Microsoft Azure",
+                "Power BI Embedded",
+              ].map((name) => (
+                <div key={`${name}-2`} className="partner-pill">
+                  {name}
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* dSOCIALBEAST & D-SaaS */}
-        <section
-          id="dsocialbeast"
-          className="mt-14 grid gap-10 border-t border-white/5 pt-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
-        >
-          <div>
-            <h2 className="text-xl font-semibold">
-              dSOCIALBEAST • campanhas guiadas por BI em tempo real.
-            </h2>
-            <p className="mt-3 text-sm text-white/70">
-              dSOCIALBEAST é o motor de campanhas do ecossistema. Ele lê o que
-              está acontecendo nos dashboards do RunsBI™, combina com o histórico
-              do cliente e dispara ações em redes sociais, CRM e automações
-              externas — sempre com o TGhosT™ no centro da conversa.
-            </p>
-            <p className="mt-3 text-sm text-white/70">
-              Em vez de campanhas “às cegas”, o D-SaaS da RunAI Systems LLC
-              conecta{" "}
-              <span className="font-semibold text-sky-300">voz → dados → ação</span>{" "}
-              no mesmo fluxo, em qualquer país onde a operação esteja rodando.
-            </p>
+        {/* CSS só para o marquee / pills */}
+        <style jsx>{`
+          .partners-track {
+            display: flex;
+            gap: 12px;
+            width: max-content;
+            animation: marquee 26s linear infinite;
+            opacity: 0.9;
+          }
 
-            <div className="mt-4 grid gap-3 text-[0.8rem] text-white/75 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white/5 p-3">
-                <p className="font-semibold">D-SaaS • Disruptive SaaS</p>
-                <p className="mt-1 text-white/70">
-                  Licenciamento modular de chefe-bots, cockpit financeiro,
-                  camadas de segurança e camadas de dados. Começa pequeno, mas
-                  nasce pronto para escala global.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/5 p-3">
-                <p className="font-semibold">Multi-stack, uma só voz</p>
-                <p className="mt-1 text-white/70">
-                  Conecte ERP, bancos, marketplaces, marketing e suporte. O
-                  usuário fala com o sistema; o vNEXX fala com todos os bastidores.
-                </p>
-              </div>
-            </div>
-          </div>
+          .partner-pill {
+            border-radius: 9999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            padding: 6px 14px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: rgba(226, 232, 240, 0.9);
+            background: radial-gradient(
+              circle at 0% 0%,
+              rgba(56, 189, 248, 0.22),
+              transparent 55%
+            );
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 18px rgba(15, 23, 42, 0.85);
+            white-space: nowrap;
+          }
 
-          {/* Bloco pequeno de integrações */}
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-black/80 to-black/95 p-4">
-            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-white/40">
-              Integrações principais
-            </p>
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
 
-            <div className="mt-3 grid grid-cols-2 gap-3 text-[0.78rem]">
-              <div className="rounded-2xl bg-black/70 p-3 ring-1 ring-sky-500/40">
-                <p className="font-semibold text-sky-300">OpenAI</p>
-                <p className="mt-1 text-white/70">
-                  LLMs, voz e ferramentas no núcleo da experiência multimodal.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-black/70 p-3 ring-1 ring-emerald-500/40">
-                <p className="font-semibold text-emerald-300">Azure + Power BI</p>
-                <p className="mt-1 text-white/70">
-                  RunsBI™ operando sobre BI Embedded com baixa latência.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-black/70 p-3 ring-1 ring-violet-500/40">
-                <p className="font-semibold text-violet-300">Vercel</p>
-                <p className="mt-1 text-white/70">
-                  Frontend global, serverless e pronto para escala.
-                </p>
-              </div>
-              <div className="rounded-2xl bg-black/70 p-3 ring-1 ring-amber-500/40">
-                <p className="font-semibold text-amber-300">GitHub</p>
-                <p className="mt-1 text-white/70">
-                  Pipeline de deploy auditável, seguro e versionado.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Segurança */}
-        <section
-          id="security"
-          className="mt-14 grid gap-10 border-t border-white/5 pt-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]"
-        >
-          <div>
-            <h2 className="text-xl font-semibold">
-              RunIDZeroTrusT • identidade, hardware e voz na mesma camada.
-            </h2>
-            <p className="mt-3 text-sm text-white/70">
-              RunIDZeroTrusT é o padrão de confiança da RunAI Systems LLC. A
-              autenticação combina{" "}
-              <span className="font-semibold text-sky-300">
-                dispositivo, identidade e voz
-              </span>{" "}
-              antes de qualquer comando chegar aos dados.
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-white/70">
-              <li>• Suporte a chave física estilo FIDO para planos avançados.</li>
-              <li>
-                • Camada de perfil cultural (país, idioma, sotaque) sem abrir mão
-                de compliance.
-              </li>
-              <li>
-                • Pensado para PMEs, mas pronto para operações globais com várias
-                subsidiárias.
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-sky-500/10 via-black to-black p-4 text-[0.8rem] text-white/75">
-            <p className="font-semibold text-sky-200">
-              vNEXX - VENNON DISRUPT™ • RunAI Systems LLC
-            </p>
-            <p className="mt-2">
-              Desenvolvido para quem nasceu em ambientes onde a criatividade
-              precisa ser protegida. O objetivo não é só mostrar gráficos bonitos,
-              mas{" "}
-              <span className="font-semibold">
-                transformar a forma como pessoas simples usam tecnologia de
-                ponta
-              </span>{" "}
-              — seja no Brasil, EUA, Europa ou Ásia.
-            </p>
-            <p className="mt-2">
-              A partir desse cockpit, a próxima camada é o{" "}
-              <span className="font-semibold">login real</span>, com TGhosT™
-              operando em cima de RunsBI™ e do ecossistema D-SaaS. O layout já
-              está pronto para receber essa segunda fase.
-            </p>
-          </div>
-        </section>
-
-        {/* FOOTER */}
-        <footer className="mt-14 border-t border-white/10 pt-6 text-[0.75rem] text-white/50">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="font-semibold text-white/70">
-                RunAI Systems LLC • vNEXX - VENNON DISRUPT™
-              </p>
-              <p>Primeiro ecossistema multimodal de voz, dados e IA em um cockpit único.</p>
-            </div>
-            <div className="text-xs text-white/40">
-              <p>Inspired by Kauai.</p>
-              <p>
-                TGhosT™, dSOCIALBEAST, RunIDZeroTrusT, RunsBI™ e D-SaaS são
-                componentes do ecossistema RunAI Systems LLC.
-              </p>
-            </div>
-          </div>
-        </footer>
-      </div>
+          @media (prefers-reduced-motion: reduce) {
+            .partners-track {
+              animation: none;
+            }
+          }
+        `}</style>
+      </footer>
     </main>
   );
 }
